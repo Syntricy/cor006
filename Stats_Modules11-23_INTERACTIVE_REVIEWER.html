@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COR 006 Stats & Probability | Modules 11–23 MEGA REVIEWER</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.65;font-size:10.5pt;}
+
+/* NAV */
+.topbar{background:linear-gradient(135deg,#0f3460,#1a1a2e);padding:20px 16px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.5);}
+.topbar h1{color:#fff;font-size:1.1em;text-align:center;margin-bottom:12px;letter-spacing:1px;}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;padding-bottom:0;}
+.tab-btn{background:#162032;color:#8b949e;border:1px solid #30363d;padding:7px 12px;border-radius:6px 6px 0 0;cursor:pointer;font-size:.78em;font-weight:bold;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{background:#21262d;color:#e6edf3;}
+.tab-btn.active{background:#1f6feb;color:#fff;border-color:#1f6feb;}
+.tab-btn.concept{border-bottom-color:#3fb950;}
+.tab-btn.compute{border-bottom-color:#e3b341;}
+
+/* CONTENT */
+.content{max-width:960px;margin:0 auto;padding:20px 16px;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* SECTIONS */
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:22px;margin:14px 0;}
+.card-blue{border-color:#1f6feb;background:#0d2137;}
+.card-green{border-color:#3fb950;background:#0d2119;}
+.card-yellow{border-color:#e3b341;background:#1f1a0d;}
+.card-red{border-color:#f85149;background:#200d0d;}
+.card-purple{border-color:#a371f7;background:#160d28;}
+
+h2{color:#58a6ff;font-size:1.15em;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+h3{color:#79c0ff;font-size:1em;margin:14px 0 8px;border-left:3px solid #1f6feb;padding-left:8px;}
+h4{color:#d2a8ff;font-size:.95em;margin:10px 0 6px;}
+
+/* FORMULA BOXES */
+.fbox{background:#0a192f;border:2px solid #00d4ff;border-radius:8px;padding:16px 20px;margin:12px 0;}
+.fbox .fname{color:#ffc107;font-weight:bold;font-size:.82em;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.fbox .fmain{color:#00d4ff;font-family:'Courier New',monospace;font-size:1.2em;text-align:center;padding:10px;background:#050e1a;border-radius:5px;margin:8px 0;}
+.fbox table{width:100%;margin-top:8px;}
+.fbox td{padding:3px 8px;font-size:.82em;color:#cdd6f4;border-bottom:1px solid #1e3050;}
+.fbox td:first-child{color:#ffc107;font-family:'Courier New',monospace;width:90px;font-weight:bold;}
+.when{background:#1a2e1a;border-left:3px solid #3fb950;padding:8px 12px;border-radius:0 5px 5px 0;margin-top:10px;font-size:.82em;color:#7ee787;}
+
+/* TABLES */
+table.main{width:100%;border-collapse:collapse;margin:10px 0;font-size:.87em;}
+table.main th{background:#1f6feb;color:white;padding:8px 10px;text-align:left;}
+table.main td{padding:7px 10px;border-bottom:1px solid #21262d;}
+table.main tr:nth-child(even) td{background:#161b22;}
+table.main tr:hover td{background:#1c2430;}
+
+/* CALLOUTS */
+.tip{background:#1f1a0d;border-left:4px solid #e3b341;padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:.87em;}
+.good{background:#0d2119;border-left:4px solid #3fb950;padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:.87em;}
+.bad{background:#200d0d;border-left:4px solid #f85149;padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:.87em;}
+.info{background:#0d1f37;border-left:4px solid #58a6ff;padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:.87em;}
+.star{background:linear-gradient(90deg,#2d1f00,#1a1400);border:1px solid #e3b341;border-radius:6px;padding:12px 16px;margin:10px 0;font-size:.87em;}
+
+/* STEPS */
+.step{display:flex;gap:10px;margin:8px 0;}
+.step-n{background:#e94560;color:white;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;font-size:.82em;}
+.step-c{flex:1;background:#161b22;border-radius:6px;padding:9px 12px;font-size:.87em;border:1px solid #30363d;}
+.step-c strong{color:#79c0ff;display:block;margin-bottom:2px;}
+
+/* WORKED EXAMPLES */
+.example{border:2px solid #1f6feb;border-radius:10px;padding:0;margin:14px 0;overflow:hidden;}
+.ex-head{background:#1f6feb;color:white;padding:10px 16px;font-weight:bold;font-size:.88em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.ex-head:hover{background:#388bfd;}
+.ex-body{padding:16px;display:none;}
+.ex-body.open{display:block;}
+.ex-row{background:#0d1f37;border-left:3px solid #e94560;border-radius:0 5px 5px 0;padding:9px 13px;margin:7px 0;font-size:.86em;}
+.ex-row .lbl{font-weight:bold;color:#e94560;font-size:.78em;text-transform:uppercase;display:block;margin-bottom:2px;}
+
+/* MNEMONIC */
+.mnemonic{background:linear-gradient(135deg,#3d1a6e,#1a1540);border:1px solid #a371f7;border-radius:8px;padding:14px 18px;margin:12px 0;font-size:.87em;color:#d2a8ff;}
+.mnemonic strong{display:block;color:#c9a0ff;margin-bottom:3px;}
+
+/* QUIZ SECTION */
+.quiz-q{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;margin:12px 0;}
+.quiz-q .qtext{font-size:.9em;margin-bottom:10px;}
+.quiz-q .qn{color:#e3b341;font-weight:bold;}
+.options{display:flex;flex-direction:column;gap:6px;}
+.opt-btn{background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:8px 14px;border-radius:6px;cursor:pointer;text-align:left;font-size:.85em;transition:all .2s;}
+.opt-btn:hover{background:#2d333b;border-color:#58a6ff;}
+.opt-btn.correct{background:#0d2119;border-color:#3fb950;color:#7ee787;}
+.opt-btn.wrong{background:#200d0d;border-color:#f85149;color:#ff7b72;}
+.quiz-feedback{margin-top:10px;padding:10px;border-radius:6px;font-size:.85em;display:none;}
+.quiz-feedback.show{display:block;}
+.feedback-correct{background:#0d2119;color:#7ee787;border:1px solid #3fb950;}
+.feedback-wrong{background:#200d0d;color:#ff7b72;border:1px solid #f85149;}
+
+/* DECISION TREE */
+.dtree{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;margin:12px 0;text-align:center;font-size:.87em;}
+.dtree table{margin:0 auto;border-collapse:collapse;}
+.dtree th{background:#1f6feb;color:white;padding:8px 14px;text-align:center;}
+.dtree td{padding:8px 14px;text-align:center;border:1px solid #30363d;}
+.z-cell{background:#0d2119;color:#7ee787;font-weight:bold;}
+.t-cell{background:#200d0d;color:#ff7b72;font-weight:bold;}
+
+/* PEARSON TABLE */
+.ptable{width:100%;border-collapse:collapse;font-size:.87em;}
+.ptable th{background:#a371f7;color:white;padding:8px 12px;}
+.ptable td{padding:8px 12px;border-bottom:1px solid #30363d;}
+.ptable tr:hover td{background:#1c2430;}
+.r-perfect{color:#ffd700;font-weight:bold;}
+.r-vhigh{color:#7ee787;font-weight:bold;}
+.r-high{color:#79c0ff;}
+.r-modhigh{color:#d2a8ff;}
+.r-mod{color:#e3b341;}
+.r-low{color:#ff7b72;}
+.r-none{color:#8b949e;}
+
+/* SYMBOL CARDS */
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+.sym-null{background:#0d1f37;border:2px solid #58a6ff;border-radius:8px;padding:12px;}
+.sym-alt{background:#200d0d;border:2px solid #f85149;border-radius:8px;padding:12px;}
+.sym-row{display:flex;gap:10px;align-items:center;padding:4px 8px;background:rgba(255,255,255,.05);border-radius:4px;margin:4px 0;font-size:.83em;}
+.sym-s{font-size:1.1em;font-weight:bold;width:36px;text-align:center;color:#ffc107;}
+
+/* ERROR TABLE */
+.egrid{display:grid;grid-template-columns:1fr 1fr 1fr;border:2px solid #30363d;border-radius:8px;overflow:hidden;margin:12px 0;font-size:.85em;}
+.egrid div{padding:10px;border:1px solid #21262d;text-align:center;}
+.eg-h{background:#1f6feb;color:white;font-weight:bold;}
+.eg-ok{background:#0d2119;color:#7ee787;font-weight:bold;}
+.eg-t1{background:#1f1a0d;color:#e3b341;font-weight:bold;}
+.eg-t2{background:#200d0d;color:#ff7b72;font-weight:bold;}
+
+/* CONFIDENCE TABLE */
+.conf-table th{background:#a371f7;}
+.conf-table .cv{color:#ffc107;font-weight:bold;font-size:1.1em;}
+
+/* PROGRESS / SCORE */
+.score-display{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;text-align:center;margin:16px 0;}
+.score-num{font-size:2em;font-weight:bold;color:#ffc107;}
+
+/* MODAL / FLASH CARD */
+.flashcard-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
+.flashcard{background:#161b22;border:2px solid #30363d;border-radius:10px;padding:16px;cursor:pointer;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
+.flashcard:hover{border-color:#58a6ff;transform:translateY(-2px);}
+.flashcard .front{font-size:.9em;color:#8b949e;}
+.flashcard .back{display:none;color:#7ee787;font-size:.85em;}
+.flashcard.flipped .front{display:none;}
+.flashcard.flipped .back{display:block;}
+.flashcard.flipped{background:#0d2119;border-color:#3fb950;}
+
+/* TAGS */
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72em;font-weight:bold;margin-left:5px;vertical-align:middle;}
+.tag-compute{background:#e3b341;color:#1a1400;}
+.tag-concept{background:#3fb950;color:#0d2119;}
+.tag-memorize{background:#f85149;color:white;}
+.tag-exam{background:#a371f7;color:white;}
+
+/* MISC */
+code{background:#1e3050;color:#00d4ff;padding:2px 6px;border-radius:4px;font-size:.9em;}
+hr{border:none;border-top:1px solid #21262d;margin:16px 0;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+@media(max-width:600px){
+  .sym-grid,.two-col{grid-template-columns:1fr;}
+  .egrid{grid-template-columns:1fr;}
+  .tab-btn{font-size:.7em;padding:5px 8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topbar">
+  <h1>📚 COR 006 Statistics &amp; Probability | Modules 11–23 MEGA REVIEWER</h1>
+  <div class="tabs">
+    <button class="tab-btn compute active" onclick="showTab('m11')">M11<br>Point Est.</button>
+    <button class="tab-btn compute" onclick="showTab('m12')">M12<br>CI Prop.</button>
+    <button class="tab-btn compute" onclick="showTab('m13')">M13<br>Sample Size</button>
+    <button class="tab-btn concept" onclick="showTab('m16')">M16<br>Hypothesis</button>
+    <button class="tab-btn concept" onclick="showTab('m17')">M17<br>Steps</button>
+    <button class="tab-btn concept" onclick="showTab('m18')">M18<br>Test Stat</button>
+    <button class="tab-btn compute" onclick="showTab('m19')">M19<br>Test Mean</button>
+    <button class="tab-btn compute" onclick="showTab('m20')">M20<br>Test Prop.</button>
+    <button class="tab-btn concept" onclick="showTab('m22')">M22<br>ANOVA</button>
+    <button class="tab-btn compute" onclick="showTab('m23')">M23<br>Pearson r</button>
+    <button class="tab-btn" onclick="showTab('quiz')" style="border-color:#ffc107;">❓<br>QUIZ</button>
+  </div>
+</div>
+
+<div class="content">
+<!-- legend -->
+<div style="text-align:center;padding:8px 0;font-size:.78em;color:#8b949e;">
+  <span class="tag tag-compute">COMPUTATION</span> Focus on solving &nbsp;|&nbsp;
+  <span class="tag tag-concept">CONCEPT</span> Focus on understanding &nbsp;|&nbsp;
+  <span class="tag tag-memorize">MEMORIZE</span> Must memorize &nbsp;|&nbsp;
+  <span class="tag tag-exam">⭐ EXAM LIKELY</span>
+</div>
+
+<!-- ======================== MODULE 11 ======================== -->
+<div id="m11" class="tab-panel active">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 11 — Point Estimate of Population Proportion &amp; Standard Error <span class="tag tag-compute">COMPUTATION</span></h2>
+    <div class="tip"><strong>Teacher's Note:</strong> Focus on COMPUTATIONS. Formulas will be given — know when to use each part.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 FORMULAS</h2>
+
+    <div class="fbox">
+      <div class="fname">Formula 1 — Sample Proportion (Point Estimate)</div>
+      <div class="fmain">p-hat = x / n</div>
+      <div>
+        <table><tr><td>p-hat</td><td>= sample proportion (best estimate of population proportion)</td></tr>
+        <tr><td>x</td><td>= number of successes / favorable cases in the sample</td></tr>
+        <tr><td>n</td><td>= total sample size</td></tr></table>
+      </div>
+      <div class="when"><strong>WHEN TO USE:</strong> Any time you need the "best estimate" of the proportion. Always compute p-hat FIRST before anything else.</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">Formula 2 — q-hat (Complement)</div>
+      <div class="fmain">q-hat = 1 − p-hat</div>
+      <div><table><tr><td>q-hat</td><td>= proportion of failures (1 minus the successes proportion)</td></tr></table></div>
+      <div class="when"><strong>WHEN TO USE:</strong> Always compute q-hat right after p-hat. You need it for Standard Error.</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">Formula 3 — Standard Error (SE)</div>
+      <div class="fmain">SE = sqrt( p-hat × q-hat / n )</div>
+      <div><table>
+        <tr><td>SE</td><td>= standard error (how much the sample proportion varies from the true proportion)</td></tr>
+        <tr><td>p-hat</td><td>= sample proportion (from Formula 1)</td></tr>
+        <tr><td>q-hat</td><td>= 1 − p-hat (from Formula 2)</td></tr>
+        <tr><td>n</td><td>= sample size</td></tr>
+      </table></div>
+      <div class="when"><strong>WHEN TO USE:</strong> After computing p-hat and q-hat. Measures the "accuracy" of the estimate.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Examples</h2>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 1 — n=400, x=250 <span>▼ Show Solution</span></div>
+      <div class="ex-body">
+        <div class="info">n=400 observations, x=250 successes. Find p-hat, q-hat, and SE.</div>
+        <div class="ex-row"><span class="lbl">Step 1 — p-hat</span>p-hat = x/n = 250/400 = <strong>0.625</strong> (or 62.5%)</div>
+        <div class="ex-row"><span class="lbl">Step 2 — q-hat</span>q-hat = 1 − 0.625 = <strong>0.375</strong></div>
+        <div class="ex-row"><span class="lbl">Step 3 — SE</span>SE = sqrt(0.625 × 0.375 / 400) = sqrt(0.234375/400) = sqrt(0.000586) = <strong>0.024</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 2 — Filipino Women Survey (1500, x=810) <span>▼ Show Solution</span></div>
+      <div class="ex-body">
+        <div class="info">1500 Filipino women, 810 conscious of figure, 975 exercise twice a week. Find p-hat and SE for each.</div>
+        <div class="ex-row"><span class="lbl">Part A — Conscious of figure</span>
+          p-hat = 810/1500 = <strong>0.540</strong> | q-hat = 1 − 0.540 = 0.46<br>
+          SE = sqrt(0.540 × 0.46 / 1500) = sqrt(0.2484/1500) = sqrt(0.0001656) = <strong>0.013</strong>
+        </div>
+        <div class="ex-row"><span class="lbl">Part B — Exercise twice a week</span>
+          p-hat = 975/1500 = <strong>0.650</strong> | q-hat = 1 − 0.650 = 0.35<br>
+          SE = sqrt(0.650 × 0.35 / 1500) = sqrt(0.2275/1500) = <strong>0.012</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 3 — 300 Households, x=120 <span>▼ Show Solution</span></div>
+      <div class="ex-body">
+        <div class="info">300 households, 120 not segregating garbage. Find p-hat and SE.</div>
+        <div class="ex-row"><span class="lbl">Solution</span>
+          p-hat = 120/300 = <strong>0.400</strong> | q-hat = 1 − 0.400 = 0.600<br>
+          SE = sqrt(0.400 × 0.600 / 300) = sqrt(0.240/300) = sqrt(0.0008) = <strong>0.028</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>✏️ Key Terms</h3>
+    <table class="main">
+      <tr><th>Term</th><th>Meaning</th></tr>
+      <tr><td><strong>Population Proportion (p)</strong></td><td>True proportion of the whole population with a given attribute (parameter)</td></tr>
+      <tr><td><strong>Sample Proportion (p-hat)</strong></td><td>Proportion from a sample — used as the BEST ESTIMATE of p</td></tr>
+      <tr><td><strong>q-hat</strong></td><td>Sample proportion of failures = 1 − p-hat</td></tr>
+      <tr><td><strong>Standard Error (SE)</strong></td><td>Measure of how accurate the estimate is; variability of the sample proportion</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== MODULE 12 ======================== -->
+<div id="m12" class="tab-panel">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 12 — Confidence Interval for Population Proportion <span class="tag tag-compute">COMPUTATION</span></h2>
+    <div class="tip">Focus on COMPUTATIONS. Know the formula structure and how to plug in values.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 FORMULA — Confidence Interval for Proportion p</h2>
+    <div class="fbox">
+      <div class="fname">Confidence Interval Formula</div>
+      <div class="fmain">p-hat − Z(α/2)·sqrt(pq/n) &lt; p &lt; p-hat + Z(α/2)·sqrt(pq/n)</div>
+      <div class="fmain" style="font-size:.95em; margin-top:4px;">Lower Limit = p-hat − Z(α/2) × sqrt(p-hat × q-hat / n)</div>
+      <div class="fmain" style="font-size:.95em;">Upper Limit = p-hat + Z(α/2) × sqrt(p-hat × q-hat / n)</div>
+      <div><table>
+        <tr><td>p-hat</td><td>= sample proportion = x/n</td></tr>
+        <tr><td>q-hat</td><td>= 1 − p-hat</td></tr>
+        <tr><td>Z(α/2)</td><td>= critical value from z-table based on confidence level</td></tr>
+        <tr><td>n</td><td>= sample size</td></tr>
+        <tr><td>p</td><td>= true population proportion (what we are estimating)</td></tr>
+      </table></div>
+    </div>
+
+    <h3>🔑 Critical Values — Commonly Used Confidence Levels <span class="tag tag-memorize">MEMORIZE</span></h3>
+    <table class="main conf-table">
+      <tr><th>Confidence Level (1−α)</th><th>Alpha (α)</th><th>Critical Value Z(α/2)</th></tr>
+      <tr><td>90%</td><td>0.10</td><td class="cv">1.645</td></tr>
+      <tr><td>95%</td><td>0.05</td><td class="cv">1.96</td></tr>
+      <tr><td>99%</td><td>0.01</td><td class="cv">2.575</td></tr>
+    </table>
+    <div class="mnemonic"><strong>🧠 MNEMONIC: "90=1.645 | 95=1.96 | 99=2.575" → Count the confidence up, count the critical up!</strong></div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Example</h2>
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example — n=400, x=250, Find 95% CI <span>▼ Show Solution</span></div>
+      <div class="ex-body">
+        <div class="info">n=400, x=250. Find 95% confidence interval for population proportion p.</div>
+        <div class="ex-row"><span class="lbl">Step 1 — Find p-hat and q-hat</span>p-hat = 250/400 = 0.625 | q-hat = 1 − 0.625 = 0.375</div>
+        <div class="ex-row"><span class="lbl">Step 2 — Identify Z(α/2)</span>95% CI → Z(α/2) = <strong>1.96</strong></div>
+        <div class="ex-row"><span class="lbl">Step 3 — Compute the margin</span>
+          sqrt(pq/n) = sqrt(0.625 × 0.375 / 400) = sqrt(0.000586) = 0.0242<br>
+          Margin = 1.96 × 0.0242 = 0.0474
+        </div>
+        <div class="ex-row"><span class="lbl">Step 4 — Compute CI</span>
+          Lower = 0.625 − 0.0474 = <strong>0.578</strong><br>
+          Upper = 0.625 + 0.0474 = <strong>0.672</strong><br>
+          <strong>Answer: 0.578 &lt; p &lt; 0.672</strong>
+        </div>
+        <div class="ex-row"><span class="lbl">Step 5 — Interpret</span>We are <strong>95% confident</strong> that the population proportion will be between <strong>0.578 and 0.672</strong>.</div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 2 — n=400, x=250, Find 99% CI <span>▼ Show Solution</span></div>
+      <div class="ex-body">
+        <div class="info">Same data: n=400, x=250. Find 99% confidence interval.</div>
+        <div class="ex-row"><span class="lbl">Given</span>p-hat=0.625, q-hat=0.375, Z(α/2) for 99% = <strong>2.575</strong></div>
+        <div class="ex-row"><span class="lbl">Compute CI</span>
+          Lower = 0.625 − 2.575 × sqrt(0.625×0.375/400) = 0.625 − 0.0623 = <strong>0.563</strong><br>
+          Upper = 0.625 + 0.0623 = <strong>0.688</strong><br>
+          <strong>Answer: 0.563 &lt; p &lt; 0.688</strong>
+        </div>
+        <div class="good">Notice: The 99% CI is WIDER than the 95% CI. Higher confidence = wider interval!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔍 Interpretation Template</h3>
+    <div class="star">We are <strong>[confidence level]%</strong> confident that the <strong>[population being described]</strong> is between <strong>[lower limit]</strong> and <strong>[upper limit]</strong>.</div>
+  </div>
+</div>
+
+<!-- ======================== MODULE 13 ======================== -->
+<div id="m13" class="tab-panel">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 13 — Sample Size Determination <span class="tag tag-compute">COMPUTATION</span></h2>
+    <div class="tip">Focus on COMPUTATIONS. Key: always round UP to the next whole number!</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 TWO FORMULAS — Know Which One to Use!</h2>
+
+    <div class="fbox">
+      <div class="fname">Formula A — Sample Size for Estimating Population MEAN (µ)</div>
+      <div class="fmain">n = ( Z(α/2) × σ / e )²</div>
+      <div><table>
+        <tr><td>n</td><td>= required sample size (always round UP)</td></tr>
+        <tr><td>Z(α/2)</td><td>= critical value (1.645 for 90%, 1.96 for 95%, 2.575 for 99%)</td></tr>
+        <tr><td>σ</td><td>= population standard deviation (given in problem)</td></tr>
+        <tr><td>e</td><td>= margin of error (maximum allowable error)</td></tr>
+      </table></div>
+      <div class="when"><strong>USE WHEN:</strong> Problem asks about estimating the MEAN (µ). Sigma (σ) and error (e) are given.</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">Formula B — Sample Size for Estimating Population PROPORTION (p)</div>
+      <div class="fmain">n = Z(α/2)² / ( 4e² )</div>
+      <div><table>
+        <tr><td>n</td><td>= required sample size (always round UP)</td></tr>
+        <tr><td>Z(α/2)</td><td>= critical value based on confidence level</td></tr>
+        <tr><td>e</td><td>= margin of error</td></tr>
+        <tr><td>4e²</td><td>= 4 × e × e (denominator)</td></tr>
+      </table></div>
+      <div class="when"><strong>USE WHEN:</strong> Problem asks about estimating a PROPORTION (p). No sigma given — only confidence level and margin of error.</div>
+    </div>
+
+    <div class="bad"><strong>🚨 IMPORTANT RULE:</strong> ALWAYS round up to the next whole number! e.g., 42.3 → 43, never 42.</div>
+  </div>
+
+  <div class="card">
+    <h3>🔍 How to Tell Which Formula to Use</h3>
+    <table class="main">
+      <tr><th>If the problem mentions...</th><th>Use Formula</th></tr>
+      <tr><td>"standard deviation" (σ), "mean" (µ)</td><td><strong>Formula A</strong> — for estimating µ</td></tr>
+      <tr><td>"proportion", "percentage", "%", no σ given</td><td><strong>Formula B</strong> — for estimating p</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Examples</h2>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 1 — Formula A: 90% confidence, e=0.5, σ=2 <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">How large a sample should be taken to be 90% sure that the error does not exceed 0.5 when σ=2?</div>
+        <div class="ex-row"><span class="lbl">Identify</span>Estimating MEAN → Use Formula A. 90% CI → Z=1.645, σ=2, e=0.5</div>
+        <div class="ex-row"><span class="lbl">Compute</span>n = (1.645 × 2 / 0.5)² = (3.29 / 0.5)² = (6.58)² = 43.3 → Round up: <strong>n = 43</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 2 — Formula B: 99% confidence, e=0.02 <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">How large a sample should be taken to be 99% confident that our estimate of p is within 0.02?</div>
+        <div class="ex-row"><span class="lbl">Identify</span>Estimating PROPORTION → Use Formula B. 99% CI → Z=2.575, e=0.02</div>
+        <div class="ex-row"><span class="lbl">Compute</span>n = (2.575)² / (4 × 0.02²) = 6.6306 / (4 × 0.0004) = 6.6306 / 0.0016 = 4144 → <strong>n = 4144</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== MODULE 16 ======================== -->
+<div id="m16" class="tab-panel">
+  <div class="card card-green">
+    <h2>📗 MODULE 16 — Null &amp; Alternative Hypothesis, Types of Error, Rejection Region <span class="tag tag-concept">CONCEPT</span></h2>
+    <div class="good">Focus on UNDERSTANDING the concepts: what H0 and Ha mean, types of error, and test directions.</div>
+  </div>
+
+  <div class="card">
+    <h2>✏️ Core Definitions</h2>
+    <table class="main">
+      <tr><th>Term</th><th>Definition</th></tr>
+      <tr><td><strong>Hypothesis</strong></td><td>A claim, statement, or tentative explanation about people, objects, or events</td></tr>
+      <tr><td><strong>Statistical Hypothesis</strong></td><td>Assumption about the distribution of a population — either true or false</td></tr>
+      <tr><td><strong>Hypothesis Testing</strong></td><td>Statistical procedure to determine which hypothesis is more acceptable</td></tr>
+      <tr><td><strong>Null Hypothesis (H0)</strong></td><td>States NO difference or relationship exists. Always uses =, ≥, ≤</td></tr>
+      <tr><td><strong>Alternative Hypothesis (Ha)</strong></td><td>States a difference DOES exist. Opposite of H0. Uses ≠, &lt;, &gt;</td></tr>
+      <tr><td><strong>Level of Significance (α)</strong></td><td>Probability of committing Type I error. Common: 0.01, 0.05, 0.10</td></tr>
+      <tr><td><strong>Rejection Region</strong></td><td>Set of values where H0 is REJECTED (the "tail area")</td></tr>
+      <tr><td><strong>Critical Value</strong></td><td>Boundary point between rejection and non-rejection regions</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-blue">
+    <h2>🔣 Symbols — H0 vs Ha <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <div class="sym-grid">
+      <div class="sym-null">
+        <h4 style="color:#58a6ff;">NULL HYPOTHESIS H0</h4>
+        <div class="sym-row"><span class="sym-s">=</span><span>is, same, equal, equivalent</span></div>
+        <div class="sym-row"><span class="sym-s">≥</span><span>at least, minimum, not less than</span></div>
+        <div class="sym-row"><span class="sym-s">≤</span><span>at most, maximum, not more than</span></div>
+      </div>
+      <div class="sym-alt">
+        <h4 style="color:#f85149;">ALTERNATIVE HYPOTHESIS Ha</h4>
+        <div class="sym-row"><span class="sym-s">≠</span><span>not equal, different, is not</span></div>
+        <div class="sym-row"><span class="sym-s">&lt;</span><span>less than, below, decrease, lower</span></div>
+        <div class="sym-row"><span class="sym-s">&gt;</span><span>greater than, above, increase, more than</span></div>
+      </div>
+    </div>
+    <div class="mnemonic"><strong>🧠 MNEMONIC: "H0 = NO difference (uses =) | Ha = YA there IS a difference (uses ≠ &lt; &gt;)"</strong></div>
+  </div>
+
+  <div class="card">
+    <h2>❌ Types of Error <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <div class="egrid">
+      <div class="eg-h" style="background:#21262d;color:#e6edf3;">Decision / Truth</div>
+      <div class="eg-h">H0 is TRUE</div>
+      <div class="eg-h">H0 is FALSE</div>
+      <div style="padding:10px;background:#161b22;">Do NOT reject H0</div>
+      <div class="eg-ok">✅ Correct</div>
+      <div class="eg-t2">❌ TYPE II (Beta)</div>
+      <div style="padding:10px;background:#161b22;">Reject H0</div>
+      <div class="eg-t1">❌ TYPE I (Alpha)</div>
+      <div class="eg-ok">✅ Correct</div>
+    </div>
+    <div class="bad"><strong>TYPE I Error:</strong> Reject H0 when it is actually TRUE → "False Alarm!" | Probability = α</div>
+    <div class="bad"><strong>TYPE II Error:</strong> Fail to reject H0 when it is actually FALSE → "Missed it!" | Probability = β</div>
+    <div class="mnemonic"><strong>🧠 "Type I = Cried WOLF (false alarm) | Type II = MISSED the wolf"</strong></div>
+  </div>
+
+  <div class="card">
+    <h2>📐 One-Tailed vs Two-Tailed Tests <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <table class="main">
+      <tr><th>Test Type</th><th>Ha Uses</th><th>Rejection Region</th><th>Keyword Clues</th></tr>
+      <tr><td><strong>Right-tailed</strong></td><td>&gt;</td><td>Right side only</td><td>greater than, more than, increase, higher</td></tr>
+      <tr><td><strong>Left-tailed</strong></td><td>&lt;</td><td>Left side only</td><td>less than, below, decrease, lower, fewer</td></tr>
+      <tr><td><strong>Two-tailed</strong></td><td>≠</td><td>Both sides (α/2 each)</td><td>different, not equal, is/is not, differs</td></tr>
+    </table>
+    <div class="mnemonic"><strong>🧠 "Less = Left | Greater = Right | Not Equal = Both!"</strong></div>
+  </div>
+</div>
+
+<!-- ======================== MODULE 17 ======================== -->
+<div id="m17" class="tab-panel">
+  <div class="card card-green">
+    <h2>📗 MODULE 17 — Basic Steps of Hypothesis Testing &amp; Types of Test Statistic <span class="tag tag-concept">CONCEPT</span></h2>
+  </div>
+
+  <div class="card card-blue">
+    <h2>🪜 The 5 Steps in Hypothesis Testing <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <div class="mnemonic"><strong>🧠 MNEMONIC: "F-I-D-D-S" → Formulate, Identify, Determine, Decide, State</strong></div>
+    <div class="step"><div class="step-n">1</div><div class="step-c"><strong>FORMULATE</strong> the Null and Alternative Hypothesis — Write H0 (no difference, uses =) and Ha (difference exists, uses ≠ &lt; &gt;)</div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-c"><strong>IDENTIFY</strong> the Level of Significance (α) and Test Statistic — Choose z-test, t-test, or F-test. α = 0.01, 0.05, or 0.10</div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-c"><strong>DETERMINE</strong> the Critical Value and Rejection Region — Use α for one-tailed; α/2 for two-tailed. Look up in z or t table</div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-c"><strong>DECIDE</strong> — Compute the Test Statistic and Compare — If |computed| &gt; |critical| → REJECT H0</div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-c"><strong>STATE</strong> the Conclusion — "At the ___ level of significance, there is [enough/not enough] evidence to [support/reject] the claim that ___."</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🔬 Types of Test Statistic <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <table class="main">
+      <tr><th>Test</th><th>Use When...</th><th>Example</th></tr>
+      <tr><td><strong>z-test</strong></td><td>n ≥ 30 (any σ) OR σ is known (any n)</td><td>Comparing average teaching salaries of men vs women</td></tr>
+      <tr><td><strong>t-test</strong></td><td>n &lt; 30 AND σ is UNKNOWN</td><td>Average salaries from a small sample of 12 professors</td></tr>
+      <tr><td><strong>F-test</strong></td><td>Comparing VARIANCES of 2+ groups</td><td>Comparing score variability from 3 class sections (ANOVA)</td></tr>
+    </table>
+    <div class="mnemonic"><strong>🧠 "Z = Big (n≥30) | T = Tiny (n&lt;30, σ unknown) | F = Fight (variances)"</strong></div>
+  </div>
+
+  <div class="card">
+    <h2>🚦 Reject or Accept Rule <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <div class="good"><strong>ACCEPT H0 / Fail to Reject:</strong> |computed value| ≤ |critical value| → NOT in rejection region</div>
+    <div class="bad"><strong>REJECT H0:</strong> |computed value| &gt; |critical value| → IN the rejection region</div>
+    <table class="main">
+      <tr><th>Direction</th><th>Ha says...</th><th>Reject H0 when (z-test)</th><th>Reject H0 when (t-test)</th></tr>
+      <tr><td>Left-tailed</td><td>µ &lt; µ0</td><td>z &lt; −Zα</td><td>t &lt; −tα,n-1</td></tr>
+      <tr><td>Right-tailed</td><td>µ &gt; µ0</td><td>z &gt; Zα</td><td>t &gt; tα,n-1</td></tr>
+      <tr><td>Two-tailed</td><td>µ ≠ µ0</td><td>|z| &gt; Zα/2</td><td>|t| &gt; tα/2,n-1</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== MODULE 18 ======================== -->
+<div id="m18" class="tab-panel">
+  <div class="card card-green">
+    <h2>📗 MODULE 18 — Identifying Appropriate Test Statistic <span class="tag tag-concept">CONCEPT</span></h2>
+  </div>
+
+  <div class="card card-blue">
+    <h2>🌳 Decision Tree — Which Test? <span class="tag tag-exam">⭐ EXAM LIKELY</span></h2>
+    <div class="dtree">
+      <table>
+        <tr><th colspan="4">Look at sample size (n)...</th></tr>
+        <tr>
+          <th colspan="2" style="background:#1a3060;">n ≥ 30 (LARGE)</th>
+          <th colspan="2" style="background:#1a3060;">n &lt; 30 (SMALL)</th>
+        </tr>
+        <tr>
+          <td style="font-weight:bold;">σ KNOWN</td>
+          <td style="font-weight:bold;">σ UNKNOWN</td>
+          <td style="font-weight:bold;">σ KNOWN</td>
+          <td style="font-weight:bold;">σ UNKNOWN</td>
+        </tr>
+        <tr>
+          <td class="z-cell">z-test</td>
+          <td class="z-cell">z-test</td>
+          <td class="z-cell">z-test</td>
+          <td class="t-cell">t-test ⭐</td>
+        </tr>
+      </table>
+    </div>
+    <div class="bad"><strong>🚨 GOLDEN RULE:</strong> Use t-test ONLY when BOTH: (1) n &lt; 30 AND (2) σ is UNKNOWN. If either fails, use z-test!</div>
+    <div class="tip"><strong>Reading the problem:</strong> "population standard deviation" or "σ =" → σ KNOWN (use z). "sample standard deviation" or "s =" with no σ → σ UNKNOWN (check n to decide).</div>
+  </div>
+
+  <div class="card">
+    <h2>📐 Formulas Side by Side</h2>
+    <div class="two-col">
+      <div class="fbox">
+        <div class="fname">Z-TEST (σ known OR n ≥ 30)</div>
+        <div class="fmain">z = (x̄ − µ) / (σ / √n)</div>
+        <div class="when">Use σ if known. If n≥30 and σ unknown, use s in place of σ.</div>
+      </div>
+      <div class="fbox">
+        <div class="fname">T-TEST (σ unknown AND n &lt; 30)</div>
+        <div class="fmain">t = (x̄ − µ) / (s / √n)</div>
+        <div class="when">s = sample SD. Also need: df = n − 1 for t-table lookup.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Quick Practice — Which Test?</h2>
+    <table class="main">
+      <tr><th>Situation</th><th>n</th><th>σ or s?</th><th>Test</th></tr>
+      <tr><td>n=40, σ=P50 given</td><td>≥30</td><td>σ known</td><td class="z-cell">z-test</td></tr>
+      <tr><td>n=100, s=8.9 (sample SD)</td><td>&gt;30</td><td>σ unknown, use s</td><td class="z-cell">z-test (Case 3)</td></tr>
+      <tr><td>n=12, s=11.9 (sample SD)</td><td>&lt;30</td><td>σ unknown</td><td class="t-cell">t-test!</td></tr>
+      <tr><td>n=64, σ=P5,500</td><td>≥30</td><td>σ known</td><td class="z-cell">z-test</td></tr>
+      <tr><td>n=28, s=P1.5M</td><td>&lt;30</td><td>σ unknown</td><td class="t-cell">t-test!</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== MODULE 19 ======================== -->
+<div id="m19" class="tab-panel">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 19 — Hypothesis Testing for Population Mean <span class="tag tag-compute">COMPUTATION</span></h2>
+    <div class="tip">Focus on COMPUTATIONS — follow the 6-step process and know which case applies.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 The 3 Cases</h2>
+    <table class="main">
+      <tr><th>Case</th><th>Condition</th><th>Formula</th></tr>
+      <tr><td><strong>Case 1</strong></td><td>σ is KNOWN (any n)</td><td><code>z = (x̄ − µ0) / (σ/√n)</code></td></tr>
+      <tr><td><strong>Case 2</strong></td><td>σ UNKNOWN, n ≤ 30</td><td><code>t = (x̄ − µ0) / (s/√n)</code> | df = n−1</td></tr>
+      <tr><td><strong>Case 3</strong></td><td>σ UNKNOWN, n &gt; 30</td><td><code>z = (x̄ − µ0) / (s/√n)</code> (use s, still z!)</td></tr>
+    </table>
+
+    <h3>Critical Values of Z</h3>
+    <table class="main">
+      <tr><th>Test Type</th><th>α=0.10</th><th>α=0.05</th><th>α=0.025</th><th>α=0.01</th></tr>
+      <tr><td>One-tailed</td><td>1.28</td><td class="cv">1.645</td><td>1.96</td><td>2.33</td></tr>
+      <tr><td>Two-tailed</td><td>1.645</td><td class="cv">1.96</td><td>2.33</td><td class="cv">2.575</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Examples</h2>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 1 — Average Lifespan &gt;70 yrs (Right-tailed, Case 3) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=100, x̄=71.8 yrs, s=8.9 yrs, µ0=70. Is lifespan &gt;70? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1 — Hypotheses</span>H0: µ=70 | Ha: µ&gt;70 → Right-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 2 — Test &amp; Sig</span>α=0.05 | σ unknown, n=100&gt;30 → Case 3 → z-test</div>
+        <div class="ex-row"><span class="lbl">Step 3 — Critical Value</span>Right-tailed α=0.05 → z-critical = <strong>1.645</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4 — Compute z</span>z = (71.8−70)/(8.9/√100) = 1.8/0.89 = <strong>z = 2.02</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5 — Decision</span>2.02 &gt; 1.645 → REJECT H0</div>
+        <div class="ex-row"><span class="lbl">Step 6 — Conclusion</span><strong>The average lifespan today is greater than 70 years.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 2 — Teacher Mean Score &gt;82 (Right-tailed, Case 1) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=81, x̄=90, σ=20, µ0=82. Is mean &gt;82? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: µ=82 | Ha: µ&gt;82 → Right-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 2</span>σ=20 known → Case 1 → z-test. α=0.05, right-tail → critical=1.645</div>
+        <div class="ex-row"><span class="lbl">Step 4</span>z = (90−82)/(20/√81) = 8/(20/9) = 8/2.222 = <strong>z = 3.6</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>3.6 &gt; 1.645 → REJECT H0 → <strong>Mean score IS greater than 82.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 3 — HR Salary &lt; P25,000 (Left-tailed, Case 1) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=64, x̄=P23,800, σ=P5,500, µ0=P25,000. Do employees earn LESS? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: µ=25000 | Ha: µ&lt;25000 → Left-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 2</span>σ known, n=64 → Case 1 → z-test. Left-tail α=0.05 → critical = <strong>−1.645</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>z = (23800−25000)/(5500/√64) = −1200/687.5 = <strong>z = −1.75</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>−1.75 &lt; −1.645 → REJECT H0 → <strong>Employees earn significantly less than P25,000.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 4 — Printer 1500 pages (Two-tailed, Case 1) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=35, x̄=1475, σ=60, µ0=1500. Support claim? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: µ=1500 | Ha: µ≠1500 → Two-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 2</span>σ known → Case 1 → z-test. Two-tail α=0.05 → critical = <strong>±1.96</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>z = (1475−1500)/(60/√35) = −25/10.14 = <strong>z = −2.47</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>|−2.47|=2.47 &gt; 1.96 → REJECT H0 → <strong>Data does NOT support the claim. Mean ≠ 1500.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 5 — Registration Time t-test (Case 2, α=0.01) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=12, x̄=42 min, s=11.9 min, µ0=50. Test if mean &lt;50. α=0.01</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: µ=50 | Ha: µ&lt;50 → Left-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 2</span>σ unknown, n=12&lt;30 → Case 2 → t-test. df=12−1=11</div>
+        <div class="ex-row"><span class="lbl">Step 3</span>t-critical (α=0.01, df=11, left) = <strong>−2.718</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>t = (42−50)/(11.9/√12) = −8/3.44 = <strong>t = −2.33</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>−2.33 &gt; −2.718 → NOT in rejection region → ACCEPT H0. <strong>Not enough evidence at 0.01 level.</strong></div>
+        <div class="tip">Note: At α=0.05 (critical=−1.645), t=−2.33 would REJECT H0. Level of significance matters!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== MODULE 20 ======================== -->
+<div id="m20" class="tab-panel">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 20 — Hypothesis Testing for Population Proportion <span class="tag tag-compute">COMPUTATION</span></h2>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 FORMULA</h2>
+    <div class="fbox">
+      <div class="fname">Step A — Find p-hat first!</div>
+      <div class="fmain">p-hat = x / n</div>
+    </div>
+    <div class="fbox">
+      <div class="fname">Step B — Compute z</div>
+      <div class="fmain">z = ( p-hat − p0 ) / sqrt[ p0(1−p0)/n ]</div>
+      <div><table>
+        <tr><td>p-hat</td><td>= x/n (sample proportion)</td></tr>
+        <tr><td>p0</td><td>= hypothesized proportion from H0 (e.g., "50%" → 0.5)</td></tr>
+        <tr><td>1−p0</td><td>= complement of p0</td></tr>
+        <tr><td>n</td><td>= sample size</td></tr>
+      </table></div>
+      <div class="when"><strong>USE WHEN:</strong> Problem is about PROPORTIONS/PERCENTAGES ("10% of population", "more than 50% approved")</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Examples</h2>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 1 — University VP Approval p&gt;0.5 <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=120 faculty, 55 approved. Need more than 50%. Is it sufficient? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: p=0.5 | Ha: p&gt;0.5 → Right-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 3</span>Right-tailed α=0.05 → critical = <strong>1.645</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>p-hat=55/120=0.4583 | z=(0.4583−0.5)/√[0.5×0.5/120]=−0.0417/0.0456=<strong>−0.915</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>−0.915 &lt; 1.645 → ACCEPT H0. <strong>Not enough evidence. More than 55 should approve.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 2 — College Dean p&gt;0.7 <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=100 students, 75 support new grading policy. More than 70%? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: p=0.7 | Ha: p&gt;0.7 → Right-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 3</span>Critical = <strong>1.645</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>p-hat=75/100=0.75 | z=(0.75−0.70)/√[0.70×0.30/100]=0.05/0.04583=<strong>1.09</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>1.09 &lt; 1.645 → ACCEPT H0. <strong>Not enough evidence that more than 70% support.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 3 — Left-Handed Population p≠0.10 (Two-tailed) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">n=750, 92 left-handed. Claim: 10% of pop is left-handed. α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: p=0.10 | Ha: p≠0.10 → Two-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 3</span>Two-tailed α=0.05 → critical = <strong>±1.96</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>p-hat=92/750=0.1227 | z=(0.1227−0.10)/√[0.10×0.90/750]=0.0227/0.01095=<strong>2.07</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>2.07 &gt; 1.96 → REJECT H0. <strong>Enough evidence to reject the claim that 10% are left-handed.</strong></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Example 4 — Unemployment Rate p&gt;0.035 <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">National rate=3.5%. n=450 in Wisconsin, 22 unemployed. Is county rate higher? α=0.05</div>
+        <div class="ex-row"><span class="lbl">Step 1</span>H0: p=0.035 | Ha: p&gt;0.035 → Right-tailed</div>
+        <div class="ex-row"><span class="lbl">Step 3</span>Critical = <strong>1.645</strong></div>
+        <div class="ex-row"><span class="lbl">Step 4</span>p-hat=22/450=0.0489 | z=(0.0489−0.035)/√[0.035×0.965/450]=0.0139/0.00866=<strong>1.60</strong></div>
+        <div class="ex-row"><span class="lbl">Step 5-6</span>1.60 &lt; 1.645 → FAIL TO REJECT H0. <strong>Not enough evidence county rate is higher.</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== MODULE 22 ======================== -->
+<div id="m22" class="tab-panel">
+  <div class="card card-green">
+    <h2>📗 MODULE 22 — Analysis of Variance (ANOVA) <span class="tag tag-concept">CONCEPT</span> <span class="tag tag-compute">COMPUTATION</span></h2>
+    <div class="good">Focus on CONCEPTS and understanding the formulas. The F-ratio is the test statistic for ANOVA.</div>
+  </div>
+
+  <div class="card">
+    <h2>✏️ What is ANOVA?</h2>
+    <div class="info">ANOVA is a comparison test used to determine the <strong>significant difference among normal population means</strong>. Used when comparing means of <strong>3 or more populations</strong>.</div>
+    <h3>Assumptions for ANOVA:</h3>
+    <ul style="margin-left:20px; font-size:.87em; line-height:1.8;">
+      <li>Groups are from normal populations</li>
+      <li>Variances of the different groups are equal</li>
+      <li>Random samples in groups are independent</li>
+    </ul>
+    <div class="tip">The test statistic for ANOVA is the <strong>F-ratio</strong>. Compare computed F to tabular F value.</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 ANOVA Formulas — Step by Step</h2>
+
+    <div class="fbox">
+      <div class="fname">1. Total Sum of Squares (TSS)</div>
+      <div class="fmain">TSS = Σ(x²) − (Σx)²/N</div>
+      <div><table>
+        <tr><td>Σ(x²)</td><td>= sum of all squared values (every x² added up)</td></tr>
+        <tr><td>(Σx)²</td><td>= square of the sum of ALL x values</td></tr>
+        <tr><td>N</td><td>= total number of all data points (rows × columns)</td></tr>
+      </table></div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">2. Sum of Squares Between Columns (SSb)</div>
+      <div class="fmain">SSb = (1/rows) × Σ(column sum)² − (Σx)²/N</div>
+      <div><table>
+        <tr><td>rows</td><td>= number of items per group (each group has equal rows)</td></tr>
+        <tr><td>Σ(column sum)²</td><td>= square each group's total, then add them</td></tr>
+      </table></div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">3. Sum of Squares Within Columns (SSw)</div>
+      <div class="fmain">SSw = TSS − SSb</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">4. Mean SS Between (MSSb)</div>
+      <div class="fmain">MSSb = SSb / dfb &nbsp;&nbsp;&nbsp; where dfb = columns − 1</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">5. Mean SS Within (MSSw)</div>
+      <div class="fmain">MSSw = SSw / dfw &nbsp;&nbsp;&nbsp; where dfw = (rows × columns) − columns</div>
+    </div>
+
+    <div class="fbox">
+      <div class="fname">6. F-value (Test Statistic)</div>
+      <div class="fmain">F = MSSb / MSSw</div>
+      <div class="when"><strong>DECISION:</strong> If computed F &lt; tabular F → ACCEPT H0 (no significant difference). If computed F &gt; tabular F → REJECT H0.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Example — Teaching Methods</h2>
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">ANOVA — 3 Groups, 7 Students Each (5% level) <span>▼ Show Full Solution</span></div>
+      <div class="ex-body">
+        <div class="info">Group A (Exploratory): 85,90,92,88,91,93,89 | Group B (Cooperative): 86,88,89,90,87,88,91 | Group C (Traditional): 100,89,88,87,83,85,80</div>
+        <div class="ex-row"><span class="lbl">Step 1 — Hypotheses</span>H0: No significant difference among teaching methods. | Ha: There IS a significant difference.</div>
+        <div class="ex-row"><span class="lbl">Step 2</span>α=0.05, test statistic = ANOVA (F-test)</div>
+        <div class="ex-row"><span class="lbl">Step 3 — Critical F</span>dfb=3−1=2 (columns), look up F-table: col 2, row 18 → F-critical = <strong>3.55</strong></div>
+        <div class="ex-row"><span class="lbl">TSS</span>Σ(x²) = 56384+54755+53748 = 164,887 | Σx = 628+619+612 = 1859<br>TSS = 164,887 − (1859)²/21 = 164,887 − 164,566 = <strong>321</strong></div>
+        <div class="ex-row"><span class="lbl">SSb</span>= (1/7)[(628)²+(619)²+(612)²] − (1859)²/21<br>= (1/7)[394384+383161+374544] − 164566<br>= (1/7)(1152089) − 164566 = 164584.14 − 164566 = <strong>18.38</strong></div>
+        <div class="ex-row"><span class="lbl">SSw</span>= TSS − SSb = 321 − 18.38 = <strong>302.86</strong></div>
+        <div class="ex-row"><span class="lbl">MSSb</span>= 18.38/2 = <strong>9.19</strong></div>
+        <div class="ex-row"><span class="lbl">MSSw</span>dfw = (7×3)−3 = 18 | MSSw = 302.86/18 = <strong>16.825</strong></div>
+        <div class="ex-row"><span class="lbl">F-value</span>F = 9.19/16.825 = <strong>0.546</strong></div>
+        <div class="ex-row"><span class="lbl">Decision</span>0.546 &lt; 3.55 → ACCEPT H0</div>
+        <div class="ex-row"><span class="lbl">Conclusion</span><strong>The three strategies of teaching are NOT significantly different from each other at 5% level of significance.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📊 ANOVA Summary Table Structure</h3>
+    <table class="main">
+      <tr><th>Source</th><th>SS</th><th>df</th><th>MSS</th><th>F</th></tr>
+      <tr><td>Between (Groups)</td><td>SSb</td><td>c−1</td><td>MSSb=SSb/dfb</td><td>MSSb/MSSw</td></tr>
+      <tr><td>Within (Error)</td><td>SSw</td><td>(r×c)−c</td><td>MSSw=SSw/dfw</td><td>—</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>TSS</strong></td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== MODULE 23 ======================== -->
+<div id="m23" class="tab-panel">
+  <div class="card card-yellow">
+    <h2>📊 MODULE 23 — Pearson's Correlation Coefficient (r) <span class="tag tag-compute">COMPUTATION</span> <span class="tag tag-memorize">MEMORIZE Interpretations!</span></h2>
+    <div class="bad">⚠️ Teacher said: "<strong>You are REQUIRED to MEMORIZE the interpretation of the different values of Pearson's r.</strong> It is NOT included in the formulas that will be provided."</div>
+  </div>
+
+  <div class="card card-blue">
+    <h2>📐 FORMULA — Pearson's r</h2>
+    <div class="fbox">
+      <div class="fname">Pearson Correlation Coefficient</div>
+      <div class="fmain">r = [ n·Σxy − Σx·Σy ] / sqrt{ [n·Σx² − (Σx)²] × [n·Σy² − (Σy)²] }</div>
+      <div><table>
+        <tr><td>r</td><td>= Pearson correlation coefficient (ranges from −1 to +1)</td></tr>
+        <tr><td>n</td><td>= number of paired data points</td></tr>
+        <tr><td>Σxy</td><td>= sum of (each x × each y) products</td></tr>
+        <tr><td>Σx</td><td>= sum of all x values</td></tr>
+        <tr><td>Σy</td><td>= sum of all y values</td></tr>
+        <tr><td>Σx²</td><td>= sum of each x squared</td></tr>
+        <tr><td>Σy²</td><td>= sum of each y squared</td></tr>
+        <tr><td>(Σx)²</td><td>= square of the SUM of x (different from Σx²!)</td></tr>
+      </table></div>
+    </div>
+    <div class="tip"><strong>Setup tip:</strong> Create a table with columns: x, y, x², y², xy. Get sums of each column, then plug into formula.</div>
+  </div>
+
+  <div class="card card-red">
+    <h2>🌟 Interpretation of Pearson's r — MUST MEMORIZE <span class="tag tag-memorize">MEMORIZE</span></h2>
+    <div class="bad">These are NOT in the formula sheet. You MUST know them by heart!</div>
+    <table class="ptable">
+      <tr><th>Value of r</th><th>Interpretation</th></tr>
+      <tr><td><span class="r-perfect">r = +1.00</span></td><td>Perfect Positive Correlation</td></tr>
+      <tr><td><span class="r-vhigh">r = +0.91 to +0.99</span></td><td>Very High Positive Correlation</td></tr>
+      <tr><td><span class="r-high">r = +0.71 to +0.90</span></td><td>High Positive Correlation</td></tr>
+      <tr><td><span class="r-modhigh">r = +0.51 to +0.70</span></td><td>Moderately High Positive Correlation</td></tr>
+      <tr><td><span class="r-mod">r = +0.31 to +0.50</span></td><td>Moderate Positive Correlation</td></tr>
+      <tr><td><span class="r-low">r = +0.01 to +0.30</span></td><td>Low Positive Correlation</td></tr>
+      <tr><td><span class="r-none">r = 0.00</span></td><td>No Correlation</td></tr>
+      <tr><td><span class="r-low">r = −0.01 to −0.30</span></td><td>Low Negative Correlation</td></tr>
+      <tr><td><span class="r-mod">r = −0.31 to −0.50</span></td><td>Moderate Negative Correlation</td></tr>
+      <tr><td><span class="r-modhigh">r = −0.51 to −0.70</span></td><td>Moderately High Negative Correlation</td></tr>
+      <tr><td><span class="r-high">r = −0.71 to −0.90</span></td><td>High Negative Correlation</td></tr>
+      <tr><td><span class="r-vhigh">r = −0.91 to −0.99</span></td><td>Very High Negative Correlation</td></tr>
+      <tr><td><span class="r-perfect">r = −1.00</span></td><td>Perfect Negative Correlation</td></tr>
+    </table>
+    <div class="mnemonic">
+      <strong>🧠 KEY RULES:</strong><br>
+      ✅ Positive r = both variables increase/decrease TOGETHER (Direct)<br>
+      ✅ Negative r = one increases, the other DECREASES (Inverse)<br>
+      ✅ Closer to |1| = STRONGER relationship | Closer to 0 = WEAKER<br>
+      ✅ "Very High" starts at 0.91 | "High" at 0.71 | "Mod High" at 0.51 | "Moderate" at 0.31 | "Low" at 0.01
+    </div>
+  </div>
+
+  <div class="card card-purple">
+    <h2>🎴 Flash Cards — Pearson's r Interpretation Practice</h2>
+    <div class="tip">Click each card to reveal the interpretation!</div>
+    <div class="flashcard-container" id="flashcards">
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.949</div><div class="back">Very High Positive Correlation (0.91–0.99)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.75</div><div class="back">High Positive Correlation (0.71–0.90)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = −0.85</div><div class="back">High Negative Correlation (−0.71 to −0.90)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.45</div><div class="back">Moderate Positive Correlation (0.31–0.50)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = −0.65</div><div class="back">Moderately High Negative Correlation (−0.51 to −0.70)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.15</div><div class="back">Low Positive Correlation (0.01–0.30)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 1.00</div><div class="back">Perfect Positive Correlation</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = −1.00</div><div class="back">Perfect Negative Correlation</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.00</div><div class="back">No Correlation</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = 0.60</div><div class="back">Moderately High Positive Correlation (0.51–0.70)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = −0.25</div><div class="back">Low Negative Correlation (−0.01 to −0.30)</div></div>
+      <div class="flashcard" onclick="flipCard(this)"><div class="front">r = −0.95</div><div class="back">Very High Negative Correlation (−0.91 to −0.99)</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Worked Example</h2>
+    <div class="example">
+      <div class="ex-head" onclick="toggleEx(this)">Midterm vs Final Grades (n=10) <span>▼ Show</span></div>
+      <div class="ex-body">
+        <div class="info">Given paired x (midterm) and y (final) grades. Find r and interpret.</div>
+        <div class="ex-row"><span class="lbl">Data Sums</span>n=10, Σx=775, Σy=815, Σx²=60925, Σy²=67325, Σxy=64000</div>
+        <div class="ex-row"><span class="lbl">Compute r</span>
+          Numerator: n·Σxy − Σx·Σy = 10(64000) − 775(815) = 640000 − 631625 = 8375<br>
+          Denom part 1: n·Σx² − (Σx)² = 10(60925) − 775² = 609250 − 600625 = 8625<br>
+          Denom part 2: n·Σy² − (Σy)² = 10(67325) − 815² = 673250 − 664225 = 9025<br>
+          Denom: √(8625 × 9025) = √77840625 = 8823<br>
+          r = 8375/8823 ≈ <strong>r = 0.949</strong>
+        </div>
+        <div class="ex-row"><span class="lbl">Interpretation</span>r=0.949 falls in 0.91–0.99 → <strong>Very High Positive Correlation</strong><br>There is a very high positive correlation between midterm and final grades. As midterm grades increase, final grades also increase.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== QUIZ ======================== -->
+<div id="quiz" class="tab-panel">
+  <div class="card" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);border-color:#1f6feb;">
+    <h2 style="color:#ffc107;">❓ INTERACTIVE PRACTICE QUIZ — All Modules</h2>
+    <div id="score-display" class="score-display" style="display:none;">
+      Score: <span class="score-num" id="score">0</span> / <span id="total">0</span>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q1.</span> What is the formula for sample proportion (point estimate)?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q1')">p-hat = n/x</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q1')">p-hat = x/n</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q1')">p-hat = sqrt(pq/n)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q1')">p-hat = 1 − q-hat</button>
+    </div>
+    <div id="fb-Q1" class="quiz-feedback feedback-wrong">❌ The sample proportion is p-hat = x/n where x = successes and n = sample size.</div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q2.</span> n=400, x=250. What is the standard error?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q2')">0.0625</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q2')">0.375</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q2')">0.024</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q2')">0.625</button>
+    </div>
+    <div id="fb-Q2" class="quiz-feedback feedback-correct">✅ p-hat=0.625, q-hat=0.375. SE=sqrt(0.625×0.375/400)=sqrt(0.000586)=0.024</div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q3.</span> What is the critical value Z(α/2) for a 99% confidence interval?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q3')">1.645</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q3')">1.96</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q3')">2.575</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q3')">2.33</button>
+    </div>
+    <div id="fb-Q3" class="quiz-feedback feedback-correct">✅ 90%=1.645 | 95%=1.96 | 99%=2.575 — memorize these!</div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q4.</span> For sample size to estimate a PROPORTION with e=0.02 and 99% confidence, which formula applies?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q4')">n = (Z·σ/e)²</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q4')">n = Z² / (4e²)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q4')">n = Z·σ/e</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q4')">n = sqrt(Z/e)</button>
+    </div>
+    <div id="fb-Q4" class="quiz-feedback feedback-correct">✅ For PROPORTION, use n = Z(α/2)² / (4e²). For MEAN, use n = (Z·σ/e)².</div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q5.</span> You REJECT H0 when it is actually TRUE. What type of error is this?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q5')">Type I Error (Alpha error)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q5')">Type II Error (Beta error)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q5')">Correct Decision</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q5')">No error occurs</button>
+    </div>
+    <div id="fb-Q5" class="quiz-feedback feedback-correct">✅ Type I = Reject H0 when it's true (False Alarm). Type II = Accept H0 when it's false (Missed it).</div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q6.</span> σ is UNKNOWN and n=15. Which test statistic should you use?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q6')">z-test</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q6')">t-test</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q6')">F-test</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q6')">Chi-square test</button>
+    </div>
+    <div id="fb-Q6" class="quiz-feedback feedback-correct">✅ t-test: ONLY when BOTH n &lt; 30 AND σ unknown. df = n−1 = 14.</div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q7.</span> σ is UNKNOWN and n=45. Which test statistic?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q7')">z-test (Case 3)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q7')">t-test</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q7')">F-test</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q7')">Can't determine</button>
+    </div>
+    <div id="fb-Q7" class="quiz-feedback feedback-correct">✅ n=45 &gt; 30 → z-test even though σ unknown. Use s in place of σ (Case 3).</div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q8.</span> Ha says µ &gt; µ0. Computed z=2.02, critical value=1.645. What is your decision?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q8')">Reject H0 — 2.02 &gt; 1.645</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q8')">Accept H0 — 2.02 &gt; 1.645</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q8')">Reject H0 — 2.02 &lt; 1.645</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q8')">Cannot determine</button>
+    </div>
+    <div id="fb-Q8" class="quiz-feedback feedback-correct">✅ Computed (2.02) &gt; Critical (1.645) → REJECT H0. The computed value is in the rejection region.</div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q9.</span> In ANOVA, the F-value is computed as:</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q9')">SSb / SSw</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q9')">TSS / SSb</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q9')">MSSb / MSSw</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q9')">MSSw / MSSb</button>
+    </div>
+    <div id="fb-Q9" class="quiz-feedback feedback-correct">✅ F = MSSb / MSSw. MSS = Mean Sum of Squares (SS divided by its degrees of freedom).</div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q10.</span> In ANOVA, if computed F &lt; tabular F, the decision is:</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q10')">Accept H0 — no significant difference</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q10')">Reject H0 — significant difference exists</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q10')">Need more data</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q10')">The test is inconclusive</button>
+    </div>
+    <div id="fb-Q10" class="quiz-feedback feedback-correct">✅ Computed F &lt; tabular F → ACCEPT H0 (no significant difference among groups).</div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q11.</span> Pearson's r = 0.85. What is the interpretation?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q11')">Very High Positive Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q11')">High Positive Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q11')">Moderately High Positive Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q11')">Perfect Positive Correlation</button>
+    </div>
+    <div id="fb-Q11" class="quiz-feedback feedback-correct">✅ 0.71–0.90 = High Positive Correlation. Very High is 0.91–0.99.</div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q12.</span> Pearson's r = −0.62. What is the interpretation?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q12')">High Negative Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q12')">Moderately High Negative Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q12')">Moderate Negative Correlation</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q12')">Very High Negative Correlation</button>
+    </div>
+    <div id="fb-Q12" class="quiz-feedback feedback-correct">✅ −0.51 to −0.70 = Moderately High Negative Correlation. As one variable increases, the other decreases.</div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q13.</span> n=120 faculty, 55 approved. Test p&gt;0.5. Computed z=−0.915, critical=1.645. Decision?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q13')">Accept H0 — not enough evidence</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q13')">Reject H0 — enough evidence</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q13')">Reject H0 — z is negative</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q13')">Need more data</button>
+    </div>
+    <div id="fb-Q13" class="quiz-feedback feedback-correct">✅ z=−0.915 is NOT greater than 1.645 → NOT in rejection region → Accept H0.</div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q14.</span> "The average calories of a low calorie meal is AT MOST 300." Write the correct H0 and Ha.</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q14')">H0: µ=300 | Ha: µ≠300</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q14')">H0: µ≤300 | Ha: µ&gt;300</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q14')">H0: µ≥300 | Ha: µ&lt;300</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q14')">H0: µ&gt;300 | Ha: µ&lt;300</button>
+    </div>
+    <div id="fb-Q14" class="quiz-feedback feedback-correct">✅ "At most" → ≤ → goes in H0. The alternative challenges it: Ha: µ&gt;300 (right-tailed).</div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="quiz-q">
+    <div class="qtext"><span class="qn">Q15.</span> In Pearson's r, what does a NEGATIVE value mean?</div>
+    <div class="options">
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q15')">No correlation between variables</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q15')">Both variables decrease together</button>
+      <button class="opt-btn" onclick="checkAns(this,'correct','Q15')">As one variable increases, the other decreases (inverse/indirect)</button>
+      <button class="opt-btn" onclick="checkAns(this,'wrong','Q15')">Both variables increase together</button>
+    </div>
+    <div id="fb-Q15" class="quiz-feedback feedback-correct">✅ Negative r = Inverse/Indirect correlation. One goes up, the other goes down.</div>
+  </div>
+
+  <div class="score-display" id="final-score" style="display:none;">
+    <div style="font-size:.9em;color:#8b949e;margin-bottom:8px;">QUIZ COMPLETE!</div>
+    Final Score: <span class="score-num" id="final-num">0</span> / 15
+    <div id="score-msg" style="margin-top:8px;font-size:.9em;"></div>
+    <button onclick="resetQuiz()" style="margin-top:12px;background:#1f6feb;color:white;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:.88em;">🔄 Reset Quiz</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:30px 10px;color:#8b949e;font-size:.8em;">
+  <div style="color:#ffc107;font-size:1.1em;margin-bottom:8px;">"The formulas are tools. Understanding when to use them is the skill. You've got both now — go ace that exam! 🚀"</div>
+  COR 006 Statistics &amp; Probability | Modules 11–23 | PHINMA Education
+</div>
+
+</div><!-- end .content -->
+
+<script>
+// TAB SWITCHING
+function showTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// TOGGLE EXAMPLES
+function toggleEx(head){
+  const body=head.nextElementSibling;
+  const span=head.querySelector('span');
+  if(body.classList.contains('open')){
+    body.classList.remove('open');
+    span.textContent=span.textContent.replace('▲','▼').replace('Hide','Show');
+  } else {
+    body.classList.add('open');
+    span.textContent=span.textContent.replace('▼','▲').replace('Show','Hide');
+  }
+}
+
+// FLASH CARDS
+function flipCard(card){
+  card.classList.toggle('flipped');
+}
+
+// QUIZ
+let score=0;
+let answered={};
+
+function checkAns(btn, result, qid){
+  if(answered[qid]) return;
+  answered[qid]=true;
+  const allBtns=btn.parentElement.querySelectorAll('.opt-btn');
+  allBtns.forEach(b=>b.style.pointerEvents='none');
+
+  const fb=document.getElementById('fb-'+qid);
+  if(result==='correct'){
+    btn.classList.add('correct');
+    score++;
+    fb.className='quiz-feedback feedback-correct show';
+    fb.textContent='✅ '+fb.textContent.replace('✅ ','').replace('❌ ','');
+  } else {
+    btn.classList.add('wrong');
+    fb.className='quiz-feedback feedback-wrong show';
+    // highlight correct
+    allBtns.forEach(b=>{if(b.onclick.toString().includes("'correct'")){b.classList.add('correct');}});
+  }
+
+  const total=15;
+  const done=Object.keys(answered).length;
+  document.getElementById('score-display').style.display='block';
+  document.getElementById('score').textContent=score;
+  document.getElementById('total').textContent=done;
+
+  if(done>=total){
+    const fs=document.getElementById('final-score');
+    fs.style.display='block';
+    document.getElementById('final-num').textContent=score;
+    const msg=document.getElementById('score-msg');
+    if(score>=13)msg.innerHTML='<span style="color:#7ee787">🎉 Excellent! You\'re ready for the exam!</span>';
+    else if(score>=10)msg.innerHTML='<span style="color:#e3b341">👍 Good job! Review your mistakes once more.</span>';
+    else msg.innerHTML='<span style="color:#f85149">📚 Keep studying! Go back and review each module.</span>';
+  }
+}
+
+function resetQuiz(){
+  score=0; answered={};
+  document.querySelectorAll('.opt-btn').forEach(b=>{
+    b.classList.remove('correct','wrong');
+    b.style.pointerEvents='auto';
+  });
+  document.querySelectorAll('.quiz-feedback').forEach(f=>f.classList.remove('show'));
+  document.getElementById('score-display').style.display='none';
+  document.getElementById('final-score').style.display='none';
+}
+</script>
+</body>
+</html>
